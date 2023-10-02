@@ -7,4 +7,12 @@ describe('Teste para o componente PostComment', () => {
         render(<PostComment/>);
         expect(screen.getByText('Comentar')).toBeInTheDocument();
     });
+    test('Adição do textarea',()=>{
+        render(<PostComment />)
+        fireEvent.change(screen.getByTestId('campo-tarefa'),{
+            target: {
+                value: "comentário"
+            }
+        })
+    })
 });
